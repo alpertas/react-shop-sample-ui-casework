@@ -1,16 +1,7 @@
-import styled from 'styled-components';
-import { categories } from '../data';
-import { mobile } from '../responsive';
 import { MutatingDots } from 'react-loader-spinner';
 import CategoryItem from './CategoryItem';
 import { useGetAllProductsCategoryQuery } from '../features/apiSlice';
-
-const Container = styled.div`
-  display: flex;
-  padding: 20px;
-  justify-content: space-between;
-  ${mobile({ padding: '0px', flexDirection: 'column' })}
-`;
+import { Container } from './styles/Categories.styled';
 
 const Categories = () => {
   const {

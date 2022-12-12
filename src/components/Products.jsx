@@ -4,32 +4,8 @@ import styled from 'styled-components';
 import { popularProducts } from '../data';
 import Product from './Product';
 import { useGetProductsOfACategoryQuery } from '../features/apiSlice';
+import { Container } from './styles/Products.styled';
 
-const Container = styled.div`
-  padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-`;
-/*
-const Products = () => {
-  return (
-    <Container>
-      {popularProducts.map((item) => (
-        <Product item={item} key={item.id} />
-      ))}
-      {popularProducts.map((item) =>
-        console.log(item.id, item.title, item.price, item.sex)
-      )}
-    </Container>
-  );
-};
-*/
-/* <Container>
-{data.products.length > 0
-  ? data?.products.map((item) => <Product item={item} key={item.id} />)
-  : console.log('product list is empty')}
-</Container> */
 const Products = (props) => {
   const { data, error, isError, isLoading } =
     useGetProductsOfACategoryQuery('womens-dresses');
